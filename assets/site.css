@@ -167,6 +167,8 @@
   .roadmap-note{display:flex; gap:14px; align-items:flex-start; background:rgba(202,162,58,0.08); border:1px dashed rgba(202,162,58,0.4); border-radius:var(--radius-m); padding:20px 22px;}
   .roadmap-note svg{flex:none; width:22px; height:22px; color:var(--gold-bright); margin-top:2px;}
   .roadmap-note p{font-size:0.93rem; color:var(--cream-dim);}
+  .roadmap-note p a{color:var(--gold-bright); font-weight:700; text-decoration:none; white-space:nowrap;}
+  .roadmap-note p a:hover{text-decoration:underline;}
 
   :focus-visible{outline:2px solid var(--gold-bright); outline-offset:2px;}
   @media (prefers-reduced-motion:reduce){ *{animation-duration:.01ms !important; transition-duration:.01ms !important;} html{scroll-behavior:auto;} }
