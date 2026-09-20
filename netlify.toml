@@ -29,3 +29,14 @@
   from = "/about.html"
   to = "/about/"
   status = 301
+
+# Friendly aliases for the Take Part page.
+[[redirects]]
+  from = "/get-involved"
+  to = "/take-part/"
+  status = 301
+
+[[redirects]]
+  from = "/take-part.html"
+  to = "/take-part/"
+  status = 301

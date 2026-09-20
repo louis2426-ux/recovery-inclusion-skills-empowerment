@@ -157,6 +157,13 @@
   .footer-col a:hover{color:var(--cream); text-decoration:underline;}
   .footer-bottom{display:flex; justify-content:space-between; flex-wrap:wrap; gap:10px; padding-top:20px; font-size:0.84rem; color:var(--cream-dim);}
 
+  .steps{list-style:none; margin:0; padding:0; display:grid; gap:14px;}
+  .step{display:grid; grid-template-columns:auto 1fr; gap:18px; align-items:flex-start; background:rgba(255,255,255,0.035); border:1px solid rgba(242,228,196,0.12); border-radius:var(--radius-m); padding:22px 24px;}
+  .step-num{width:38px; height:38px; border-radius:50%; flex:none; display:flex; align-items:center; justify-content:center; font-family:var(--serif); font-weight:700; font-size:1.05rem; color:var(--ink); background:var(--gold-bright);}
+  .step h4{font-size:1.05rem;}
+  .step p{margin-top:6px; font-size:0.95rem; color:var(--cream-dim);}
+  @media (max-width:640px){ .step{gap:14px; padding:20px;} }
+
   .roadmap-note{display:flex; gap:14px; align-items:flex-start; background:rgba(202,162,58,0.08); border:1px dashed rgba(202,162,58,0.4); border-radius:var(--radius-m); padding:20px 22px;}
   .roadmap-note svg{flex:none; width:22px; height:22px; color:var(--gold-bright); margin-top:2px;}
   .roadmap-note p{font-size:0.93rem; color:var(--cream-dim);}
