@@ -1,0 +1,31 @@
+[build]
+  publish = "."
+
+# The contact page has been removed — send any remaining links to the home page.
+[[redirects]]
+  from = "/contact"
+  to = "/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/contact/*"
+  to = "/"
+  status = 301
+  force = true
+
+# Old single-page routes, in case anything linked them without the hash.
+[[redirects]]
+  from = "/home"
+  to = "/"
+  status = 301
+
+[[redirects]]
+  from = "/episodes.html"
+  to = "/episodes/"
+  status = 301
+
+[[redirects]]
+  from = "/about.html"
+  to = "/about/"
+  status = 301
