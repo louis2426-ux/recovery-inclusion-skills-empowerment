@@ -40,3 +40,14 @@
   from = "/take-part.html"
   to = "/take-part/"
   status = 301
+
+# Friendly aliases for the R.I.S.E Music page.
+[[redirects]]
+  from = "/music"
+  to = "/rise-music/"
+  status = 301
+
+[[redirects]]
+  from = "/rise-music.html"
+  to = "/rise-music/"
+  status = 301
