@@ -108,6 +108,14 @@
   .card h3{font-size:1.2rem; margin-bottom:10px;}
   .card p{color:var(--cream-dim); font-size:0.97rem;}
 
+  .resource-card{display:flex; flex-direction:column; align-items:flex-start; min-height:300px;}
+  .resource-card .resource-label{color:var(--gold-bright); font-size:0.78rem; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; margin-bottom:12px;}
+  .resource-card h3{font-size:1.45rem;}
+  .resource-card .resource-phone{margin-top:18px; font-weight:600;}
+  .resource-card .resource-phone a{color:var(--gold-bright); font-size:1.15rem; font-weight:700; text-decoration:none;}
+  .resource-card > .btn{margin-top:auto; transform:translateY(8px);}
+  .resource-card > .btn:hover{transform:translateY(6px);}
+
   .quote-card{background:var(--wood-1); border:1px solid rgba(202,162,58,0.22); border-radius:var(--radius-m); padding:30px;}
   .quote-card p.quote{font-family:var(--serif); font-style:italic; font-size:1.15rem; color:var(--paper); line-height:1.5;}
 
