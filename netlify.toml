@@ -1,19 +1,6 @@
 [build]
   publish = "."
 
-# The contact page has been removed — send any remaining links to the home page.
-[[redirects]]
-  from = "/contact"
-  to = "/"
-  status = 301
-  force = true
-
-[[redirects]]
-  from = "/contact/*"
-  to = "/"
-  status = 301
-  force = true
-
 # Old single-page routes, in case anything linked them without the hash.
 [[redirects]]
   from = "/home"
@@ -39,4 +26,14 @@
 [[redirects]]
   from = "/take-part.html"
   to = "/take-part/"
+  status = 301
+
+[[redirects]]
+  from = "/resources"
+  to = "/mutual-aid/"
+  status = 301
+
+[[redirects]]
+  from = "/music"
+  to = "/rise-music/"
   status = 301

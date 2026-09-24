@@ -1,7 +1,7 @@
 (function(){
   /* Legacy hash links from the old single-page version (e.g. /#episodes) now
      map onto the real page URLs. */
-  var hashRoutes = {home:'/', episodes:'/episodes/', about:'/about/', contact:'/contact/'};
+  var hashRoutes = {home:'/', episodes:'/episodes/', about:'/about/', contact:'/contact/', resources:'/mutual-aid/', music:'/rise-music/'};
   var hash = location.hash.replace('#','');
   if(hash && hashRoutes.hasOwnProperty(hash)){
     var target = hashRoutes[hash];
