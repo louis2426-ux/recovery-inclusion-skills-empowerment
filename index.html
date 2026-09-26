@@ -97,6 +97,15 @@
     </div>
   </div>
 
+  <section class="section-tight affirmation-section" aria-labelledby="affirmationHeading">
+    <div class="container">
+      <div class="affirmation-card">
+        <p class="affirmation-label" id="affirmationHeading">TODAY'S AFFIRMATION · <span id="affirmationDate"></span></p>
+        <p class="affirmation-text" id="affirmationText">I am worthy of the life I am building, one day at a time.</p>
+      </div>
+    </div>
+  </section>
+
   <section>
     <div class="container">
       <div class="section-head">
@@ -192,5 +201,49 @@
 </footer>
 
 <script src="/assets/site.js"></script>
+<script>
+(function(){
+  var affirmations = [
+    "I am worthy of the life I am building, one day at a time.",
+    "My past does not define me — my next step does.",
+    "I am stronger than the moments that tried to break me.",
+    "Asking for help is a sign of courage, not weakness.",
+    "Every day I choose recovery, I choose myself.",
+    "I deserve peace, and I am allowed to protect it.",
+    "Progress, not perfection, is what moves me forward.",
+    "I have a voice, and my story matters.",
+    "I am learning new skills that open new doors.",
+    "I belong here, just as I am.",
+    "Today I will be patient and kind with myself.",
+    "My feelings are valid, and they will pass.",
+    "I am surrounded by people who want to see me rise.",
+    "Small wins are still wins, and I celebrate them.",
+    "I can start again at any moment of the day.",
+    "I am becoming the person I needed when I was younger.",
+    "I trust myself to handle whatever today brings.",
+    "My growth is real, even when it feels slow.",
+    "I give myself permission to rest without guilt.",
+    "I am capable of change, and I am proof of it.",
+    "I let go of what I cannot control and focus on what I can.",
+    "Every honest conversation brings me closer to freedom.",
+    "I am grateful for how far I have already come.",
+    "I have something valuable to offer my community.",
+    "Hard days do not undo my progress.",
+    "I choose hope, even when it takes effort.",
+    "I am allowed to take up space and be heard.",
+    "My recovery is mine, and I am proud of it.",
+    "I show up for myself today, and that is enough.",
+    "I am rising — and I am bringing others with me.",
+    "Each breath is a fresh chance to reset."
+  ];
+  var now = new Date();
+  var start = new Date(now.getFullYear(), 0, 0);
+  var day = Math.floor((now - start) / 86400000) + now.getFullYear() * 366;
+  var text = document.getElementById('affirmationText');
+  var date = document.getElementById('affirmationDate');
+  if(text){ text.textContent = affirmations[day % affirmations.length]; }
+  if(date){ date.textContent = now.toLocaleDateString('en-GB', {weekday:'long', day:'numeric', month:'long'}).toUpperCase(); }
+})();
+</script>
 </body>
 </html>
