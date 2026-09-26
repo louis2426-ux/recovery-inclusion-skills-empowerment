@@ -35,6 +35,8 @@
       <a class="navlink" href="/episodes/">Episodes</a>
       <a class="navlink" href="/about/">About</a>
       <a class="navlink" href="/take-part/">Take Part</a>
+      <a class="navlink" href="/rise-music/">R.I.S.E Music</a>
+      <a class="navlink" href="/mutual-aid/">Support &amp; Connection</a>
       <a class="nav-cta" href="/episodes/">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm4.6 14.5c-.2.3-.6.4-.9.2-2.5-1.5-5.6-1.8-9.3-1-.4.1-.7-.2-.8-.5-.1-.4.2-.7.5-.8 4-.9 7.5-.5 10.3 1.2.3.2.4.6.2.9zm1.2-2.7c-.2.4-.7.5-1.1.3-2.9-1.8-7.3-2.3-10.7-1.3-.4.1-.9-.1-1-.5-.1-.4.1-.9.5-1 3.9-1.2 8.7-.6 12 1.4.4.2.5.7.3 1.1zm.1-2.8C14.2 8.9 8.9 8.7 5.7 9.7c-.5.2-1-.1-1.2-.6-.2-.5.1-1 .6-1.2 3.7-1.1 9.6-.9 13.4 1.4.5.3.6.9.3 1.4-.3.4-.9.5-1.4.3z"/></svg>
         Listen
@@ -96,6 +98,15 @@
       <span>R.I.S.E</span><span class="sep">·</span><span>Recovery</span><span class="sep">·</span><span>Inclusion</span><span class="sep">·</span><span>Skills</span><span class="sep">·</span><span>Empowerment</span><span class="sep">·</span><span>CIC</span>
     </div>
   </div>
+
+  <section class="section-tight affirmation-section" aria-labelledby="affirmationHeading">
+    <div class="container">
+      <div class="affirmation-card">
+        <p class="affirmation-label" id="affirmationHeading">TODAY'S AFFIRMATION · <span id="affirmationDate"></span></p>
+        <p class="affirmation-text" id="affirmationText">I am worthy of the life I am building, one day at a time.</p>
+      </div>
+    </div>
+  </section>
 
   <section>
     <div class="container">
@@ -181,6 +192,8 @@
         <a href="/episodes/">Episodes</a>
         <a href="/about/">About</a>
         <a href="/take-part/">Take Part</a>
+        <a href="/rise-music/">R.I.S.E Music</a>
+        <a href="/mutual-aid/">Support &amp; Connection</a>
         <a href="mailto:louis@risecic.uk">Email us</a>
       </div>
     </div>
@@ -192,5 +205,49 @@
 </footer>
 
 <script src="/assets/site.js"></script>
+<script>
+(function(){
+  var affirmations = [
+    "I am worthy of the life I am building, one day at a time.",
+    "My past does not define me — my next step does.",
+    "I am stronger than the moments that tried to break me.",
+    "Asking for help is a sign of courage, not weakness.",
+    "Every day I choose recovery, I choose myself.",
+    "I deserve peace, and I am allowed to protect it.",
+    "Progress, not perfection, is what moves me forward.",
+    "I have a voice, and my story matters.",
+    "I am learning new skills that open new doors.",
+    "I belong here, just as I am.",
+    "Today I will be patient and kind with myself.",
+    "My feelings are valid, and they will pass.",
+    "I am surrounded by people who want to see me rise.",
+    "Small wins are still wins, and I celebrate them.",
+    "I can start again at any moment of the day.",
+    "I am becoming the person I needed when I was younger.",
+    "I trust myself to handle whatever today brings.",
+    "My growth is real, even when it feels slow.",
+    "I give myself permission to rest without guilt.",
+    "I am capable of change, and I am proof of it.",
+    "I let go of what I cannot control and focus on what I can.",
+    "Every honest conversation brings me closer to freedom.",
+    "I am grateful for how far I have already come.",
+    "I have something valuable to offer my community.",
+    "Hard days do not undo my progress.",
+    "I choose hope, even when it takes effort.",
+    "I am allowed to take up space and be heard.",
+    "My recovery is mine, and I am proud of it.",
+    "I show up for myself today, and that is enough.",
+    "I am rising — and I am bringing others with me.",
+    "Each breath is a fresh chance to reset."
+  ];
+  var now = new Date();
+  var start = new Date(now.getFullYear(), 0, 0);
+  var day = Math.floor((now - start) / 86400000) + now.getFullYear() * 366;
+  var text = document.getElementById('affirmationText');
+  var date = document.getElementById('affirmationDate');
+  if(text){ text.textContent = affirmations[day % affirmations.length]; }
+  if(date){ date.textContent = now.toLocaleDateString('en-GB', {weekday:'long', day:'numeric', month:'long'}).toUpperCase(); }
+})();
+</script>
 </body>
 </html>
