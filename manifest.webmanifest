@@ -1,0 +1,15 @@
+{
+  "name": "RISE Conversations",
+  "short_name": "RISE",
+  "description": "Honest conversations about recovery, inclusion, skills and empowerment from R.I.S.E CIC.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#2a1c12",
+  "theme_color": "#2a1c12",
+  "icons": [
+    { "src": "/assets/icons/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "/assets/icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "/assets/icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}

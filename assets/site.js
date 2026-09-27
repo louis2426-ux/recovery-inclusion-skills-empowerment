@@ -28,4 +28,28 @@
     wf.innerHTML = html;
   }
 
+  /* Install the app: use the browser prompt where there is one, otherwise explain how. */
+  if('serviceWorker' in navigator){
+    window.addEventListener('load', function(){ navigator.serviceWorker.register('/sw.js').catch(function(){}); });
+  }
+  var deferredPrompt = null;
+  window.addEventListener('beforeinstallprompt', function(e){ e.preventDefault(); deferredPrompt = e; });
+  var standalone = window.matchMedia('(display-mode: standalone)').matches || navigator.standalone;
+  var installLinks = document.querySelectorAll('[data-install]');
+  for(var j=0;j<installLinks.length;j++){
+    if(standalone){ installLinks[j].style.display = 'none'; continue; }
+    installLinks[j].addEventListener('click', function(e){
+      e.preventDefault();
+      if(deferredPrompt){
+        deferredPrompt.prompt();
+        deferredPrompt.userChoice.finally(function(){ deferredPrompt = null; });
+        return;
+      }
+      var ios = /iphone|ipad|ipod/i.test(navigator.userAgent);
+      alert(ios
+        ? 'To install RISE Conversations, tap the Share button in Safari, then "Add to Home Screen".'
+        : 'To install RISE Conversations, open your browser menu and choose "Install app" or "Add to Home screen".');
+    });
+  }
+
 })();

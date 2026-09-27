@@ -1,0 +1,24 @@
+<svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+  <rect width="512" height="512" fill="#2a1c12"/>
+  <defs>
+    <clipPath id="c"><circle cx="256" cy="256" r="196"/></clipPath>
+    <radialGradient id="g" cx="50%" cy="42%" r="60%"><stop offset="0%" stop-color="#ffe9b0"/><stop offset="55%" stop-color="#e6c05f"/><stop offset="100%" stop-color="#b8552b"/></radialGradient>
+  </defs>
+  <circle cx="256" cy="256" r="212" fill="#3f2a19" stroke="#caa23a" stroke-width="6"/>
+  <circle cx="256" cy="256" r="196" fill="#16283d" stroke="#e6c05f" stroke-width="2"/>
+  <g clip-path="url(#c)">
+    <circle cx="256" cy="236" r="84" fill="url(#g)"/>
+    <g stroke="#e6c05f" stroke-width="5" stroke-linecap="round" opacity="0.8">
+      <line x1="256" y1="98" x2="256" y2="130"/><line x1="186" y1="116" x2="202" y2="144"/><line x1="326" y1="116" x2="310" y2="144"/>
+      <line x1="136" y1="162" x2="164" y2="178"/><line x1="376" y1="162" x2="348" y2="178"/>
+    </g>
+    <g fill="#20140c">
+      <rect x="60" y="300" width="28" height="160"/><rect x="92" y="272" width="26" height="190"/><rect x="122" y="316" width="30" height="150"/>
+      <rect x="156" y="250" width="28" height="210"/><rect x="188" y="292" width="24" height="170"/><rect x="216" y="236" width="34" height="230"/>
+      <rect x="254" y="284" width="24" height="180"/><rect x="282" y="258" width="28" height="210"/><rect x="314" y="306" width="30" height="160"/>
+      <rect x="348" y="276" width="24" height="190"/><rect x="376" y="306" width="28" height="160"/><rect x="408" y="326" width="40" height="140"/>
+    </g>
+  </g>
+  <path d="M86 352 h340 v58 a6 6 0 0 1 -6 6 h-328 a6 6 0 0 1 -6 -6 z" fill="#3f2a19" stroke="#caa23a" stroke-width="2"/>
+  <text x="256" y="398" text-anchor="middle" font-family="Georgia, serif" font-weight="700" font-size="46" fill="#f2e4c4" letter-spacing="3">R·I·S·E</text>
+</svg>
