@@ -35,8 +35,14 @@
   header.topnav{
     position:fixed; top:0; left:0; right:0; z-index:100;
     padding-top:env(safe-area-inset-top,0px);
+    border-bottom:1px solid rgba(202,162,58,0.25);
+  }
+  /* Blur lives on a pseudo-element: backdrop-filter on the header itself would
+     trap the fixed-position mobile menu inside the 76px bar. */
+  header.topnav::before{
+    content:""; position:absolute; inset:0; z-index:-1;
     background:linear-gradient(180deg, rgba(20,13,8,0.92), rgba(20,13,8,0.82));
-    backdrop-filter:blur(8px); border-bottom:1px solid rgba(202,162,58,0.25);
+    -webkit-backdrop-filter:blur(8px); backdrop-filter:blur(8px);
   }
   .nav-row{display:flex; align-items:center; justify-content:space-between; height:76px;}
   .brandmark{display:flex; align-items:center; gap:12px; background:none; border:none; cursor:pointer; text-decoration:none;}
@@ -54,17 +60,21 @@
   nav.links a.navlink[aria-current="page"]::after{content:""; display:block; height:2px; margin-top:6px; border-radius:2px; background:var(--gold-bright);}
   .nav-cta{background:#1ed760; color:#0b3d1f; border:none; text-decoration:none; padding:10px 18px; border-radius:20px; font-weight:700; font-size:0.9rem; cursor:pointer; margin-left:8px; display:inline-flex; align-items:center; gap:8px; transition:transform .15s, background .15s;}
   .nav-cta:hover{transform:translateY(-1px); background:#23e46a;}
+  nav.links a.nav-extra{display:none;}
   .burger{display:none; background:none; border:none; padding:8px; cursor:pointer;}
   .burger span{display:block; width:24px; height:2px; background:var(--cream); margin:5px 0; border-radius:2px;}
   @media (max-width:860px){
-    nav.links{position:fixed; top:76px; left:0; right:0; bottom:0; background:var(--wood-1); flex-direction:column; align-items:stretch; padding:16px; gap:4px; transform:translateX(100%); transition:transform .25s ease; overflow-y:auto;}
-    nav.links.open{transform:translateX(0);}
+    nav.links{position:fixed; top:calc(76px + env(safe-area-inset-top,0px)); left:0; right:0; bottom:0; background:var(--wood-1); flex-direction:column; align-items:stretch; padding:16px 16px calc(16px + env(safe-area-inset-bottom,0px)); gap:4px; transform:translateX(100%); visibility:hidden; transition:transform .25s ease, visibility 0s linear .25s; overflow-y:auto; overscroll-behavior:contain;}
+    nav.links.open{transform:translateX(0); visibility:visible; transition:transform .25s ease;}
+    nav.links a.nav-extra{display:block;}
+    nav.links a.navlink[aria-current="page"]::after{width:28px;}
+    html.menu-open, html.menu-open body{overflow:hidden;}
     nav.links a.navlink{text-align:left; padding:14px 12px; font-size:1.05rem;}
     .nav-cta{margin:10px 12px 0; justify-content:center;}
     .burger{display:block;}
   }
 
-  main{padding-top:76px;}
+  main{padding-top:calc(76px + env(safe-area-inset-top,0px));}
   .page{display:block; animation:fadein .35s ease;}
   @keyframes fadein{from{opacity:0; transform:translateY(6px);} to{opacity:1; transform:translateY(0);}}
   section{padding:clamp(48px,8vw,96px) 0;}
