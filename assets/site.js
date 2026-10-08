@@ -15,6 +15,22 @@
     burger.addEventListener('click', function(){
       var open = navLinks.classList.toggle('open');
       burger.setAttribute('aria-expanded', open ? 'true' : 'false');
+      burger.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+      document.documentElement.classList.toggle('menu-open', open);
+    });
+  }
+
+  /* "Install the app" links (footer and mobile menu). */
+  var deferredPrompt = null;
+  window.addEventListener('beforeinstallprompt', function(e){ e.preventDefault(); deferredPrompt = e; });
+  var installLinks = document.querySelectorAll('[data-install-app]');
+  for(var j=0;j<installLinks.length;j++){
+    installLinks[j].addEventListener('click', function(e){
+      e.preventDefault();
+      if(deferredPrompt){ deferredPrompt.prompt(); deferredPrompt = null; return; }
+      var ios = /iphone|ipad|ipod/i.test(navigator.userAgent);
+      alert(ios ? 'To install, tap the Share button in Safari, then "Add to Home Screen".'
+                : 'To install, open your browser menu and choose "Install app" or "Add to Home screen".');
     });
   }
 

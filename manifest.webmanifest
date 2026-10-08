@@ -1,0 +1,12 @@
+{
+  "name": "RISE Conversations",
+  "short_name": "RISE",
+  "description": "The podcast from R.I.S.E CIC — Recovery, Inclusion, Skills, Empowerment.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#20140c",
+  "theme_color": "#20140c",
+  "icons": [
+    { "src": "/assets/icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" }
+  ]
+}
